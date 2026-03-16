@@ -1,52 +1,52 @@
-# Contact Book
+# Книга контактов
 
-A modern, responsive web application for managing contacts. This project was developed as a technical test assignment, demonstrating skills in frontend development, state management, and UI/UX design.
+Современное адаптивное веб-приложение для управления контактами. Этот проект был разработан в качестве тестового задания, демонстрирующего навыки фронтенд-разработки, управления состоянием и UI/UX дизайна.
 
-## ✨ Features
-- **Add Contacts**: Easily add new contacts with validation.
-- **Search & Filter**: Find contacts quickly using the search functionality.
-- **Responsive Design**: Fully functional on mobile and desktop devices.
-- **Persistant Storage**: Local storage integration to save your data.
-- **Input Masking**: Professional phone number formatting using IMask.
+## ✨ Особенности
+- **Добавление контактов**: Удобное добавление новых контактов с валидацией.
+- **Поиск и фильтрация**: Быстрый поиск контактов.
+- **Адаптивный дизайн**: Полная функциональность на мобильных и десктопных устройствах.
+- **Постоянное хранение**: Интеграция с LocalStorage для сохранения ваших данных.
+- **Маски ввода**: Профессиональное форматирование номеров телефонов с использованием IMask.
 
-## 🛠 Tech Stack
-- **Vite**: Next-generation frontend tooling.
-- **TypeScript**: Static typing for robust code.
-- **SASS/SCSS**: Modular and maintainable styling.
-- **IMask**: Smooth input masking for better UX.
+## 🛠 Технологии
+- **Vite**: Инструмент сборки нового поколения.
+- **TypeScript**: Статическая типизация для надежного кода.
+- **SASS/SCSS**: Модульные и поддерживаемые стили.
+- **IMask**: Плавные маски ввода для лучшего UX.
 
-## 🚀 Getting Started
+## 🚀 Начало работы
 
-### Prerequisites
-- Node.js (v18 or higher recommended)
-- npm or yarn
+### Предварительные условия
+- Node.js (рекомендуется v18 или выше)
+- npm или yarn
 
-### Installation
-1. Clone the repository:
+### Установка
+1. Клонируйте репозиторий:
    ```bash
    git clone [your-repo-url]
    ```
-2. Navigate to the project directory:
+2. Перейдите в папку проекта:
    ```bash
    cd contact-book
    ```
-3. Install dependencies:
+3. Установите зависимости:
    ```bash
    npm install
    ```
 
-### Running Locally
-To start the development server:
+### Запуск локально
+Для запуска сервера разработки:
 ```bash
 npm run dev
 ```
 
-### Production Build
-To create a optimized production bundle:
+### Сборка для продакшена
+Для создания оптимизированного бандла:
 ```bash
 npm run build
 ```
-The build artifacts will be stored in the `dist/` directory.
+Готовые файлы будут находиться в директории `dist/`.
 
 ---
-*Created by [Your Name/GitHub Username]*
+*Проект создан [Ваше Имя/GitHub Username]*
