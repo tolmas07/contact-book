@@ -10,7 +10,6 @@ class ContactBookApp {
     private editingContactId: number | null = null;
     private groupIndexToDelete: number | null = null;
 
-    // Elements
     private drawerOverlay = document.getElementById('drawer-overlay')!;
     private contactDrawer = document.getElementById('contact-drawer')!;
     private groupsDrawer = document.getElementById('groups-drawer')!;
@@ -44,7 +43,6 @@ class ContactBookApp {
     }
 
     private attachEventListeners() {
-        // Drawers
         document.getElementById('add-contact-desktop')?.addEventListener('click', () => this.openContactDrawer());
         document.getElementById('add-contact-mobile')?.addEventListener('click', () => this.openContactDrawer());
         document.getElementById('view-groups')?.addEventListener('click', () => this.openGroupsDrawer());
@@ -53,12 +51,10 @@ class ContactBookApp {
         document.getElementById('close-groups-drawer')?.addEventListener('click', () => this.closeAll());
         this.drawerOverlay.addEventListener('click', () => this.closeAll());
 
-        // Actions
         document.getElementById('save-contact')?.addEventListener('click', () => this.handleSaveContact());
         document.getElementById('add-group-btn')?.addEventListener('click', () => this.addGroupInput());
         document.getElementById('save-groups')?.addEventListener('click', () => this.handleSaveGroups());
 
-        // Modal
         document.getElementById('confirm-delete')?.addEventListener('click', () => this.confirmDeleteGroup());
         document.getElementById('cancel-delete')?.addEventListener('click', () => this.closeModal());
         document.getElementById('close-modal')?.addEventListener('click', () => this.closeModal());
@@ -111,7 +107,6 @@ class ContactBookApp {
             valid = false;
         }
 
-        // phoneUnmasked will contain '375' even if empty because of the fixed mask part
         if (phoneUnmasked.length <= 3) {
             this.showError('phone-error', 'Поле является обязательным');
             this.phoneInput.classList.add('error');
@@ -122,7 +117,6 @@ class ContactBookApp {
             valid = false;
         }
 
-        // Duplicate phone check
         const isDuplicate = this.contacts.some(c => c.phone === this.phoneMask.value && c.id !== this.editingContactId);
         if (isDuplicate) {
             ToastService.show('Контакт с таким номером уже существует', true);

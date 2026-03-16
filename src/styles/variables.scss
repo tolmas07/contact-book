@@ -1,5 +1,4 @@
 :root {
-    // Colors
     --primary-blue: #005BFE;
     --primary-red: #EA3D2F;
     --text-main: #2D2D2D;
@@ -8,22 +7,18 @@
     --bg-light: #F8FAFC;
     --bg-white: #FFFFFF;
 
-    // Transitions
     --transition-default: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
     --transition-fast: all 0.2s ease;
 
-    // Sizes
     --header-height: 80px;
     --drawer-width: 400px;
     --container-max-width: 800px;
 
-    // Shadows
     --shadow-sm: 0 2px 8px rgba(0, 0, 0, 0.04);
     --shadow-md: 0 4px 12px rgba(0, 0, 0, 0.1);
     --shadow-lg: 0 10px 40px rgba(0, 0, 0, 0.2);
 }
 
-// SCSS Variables as aliases
 $primary-blue: var(--primary-blue);
 $primary-red: var(--primary-red);
 $text-main: var(--text-main);

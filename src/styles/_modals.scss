@@ -64,7 +64,7 @@
             color: $text-main;
             line-height: 1.4;
             margin-bottom: 32px;
-            padding: 0; // Mobile default (no padding)
+            padding: 0;
 
             @media (min-width: 769px) {
                 padding: 0 20px;

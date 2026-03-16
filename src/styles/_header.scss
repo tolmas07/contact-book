@@ -1,7 +1,7 @@
 @use 'variables' as *;
 
 .header {
-    height: 64px; // Mobile height by default
+    height: 64px;
     background-color: white;
     display: flex;
     align-items: center;
@@ -26,7 +26,7 @@
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 0 16px; // Mobile padding
+        padding: 0 16px;
 
         @media (min-width: 769px) {
             padding: 0 40px;
@@ -36,7 +36,7 @@
     &__actions {
         display: flex;
         align-items: center;
-        gap: 8px; // Mobile gap
+        gap: 8px;
         height: 38px;
 
         @media (min-width: 769px) {
@@ -76,7 +76,7 @@
 
 .button {
     &#add-contact-desktop {
-        width: 38px; // Mobile: Only icon/circle
+        width: 38px;
         height: 38px;
         padding: 0;
         justify-content: center;

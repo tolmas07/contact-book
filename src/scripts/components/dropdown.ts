@@ -22,7 +22,6 @@ export class CustomDropdown {
 
         this.header.addEventListener('click', () => this.toggle());
 
-        // Close on outside click
         document.addEventListener('click', (e) => {
             if (!this.element.contains(e.target as Node) && this.isOpen) {
                 this.close();
@@ -49,7 +48,7 @@ export class CustomDropdown {
         this.selectedValue = value;
         this.selectedSpan.textContent = value || 'Выберите группу';
         this.selectedSpan.style.color = value ? '#2D2D2D' : '#A0A0A0';
-        this.render(); // Re-render to show selected state
+        this.render();
     }
 
     private toggle(): void {
