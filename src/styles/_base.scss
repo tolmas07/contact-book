@@ -1,0 +1,60 @@
+@use 'variables' as *;
+
+@font-face {
+    font-family: 'Circe';
+    src: url('../assets/fonts/Circe-Bold.woff2') format('woff2');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Circe';
+    src: url('../assets/fonts/Circe-Regular.woff2') format('woff2');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Circe', sans-serif;
+    color: $text-main;
+    line-height: 1.5;
+    background-color: $bg-white;
+    overflow-x: hidden;
+}
+
+button,
+input,
+select,
+textarea {
+    font-family: 'Circe', sans-serif;
+}
+
+.page {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+.desktop-only {
+    display: none !important;
+
+    @media (min-width: 769px) {
+        display: flex !important;
+    }
+}
+
+.mobile-only {
+    display: flex !important;
+
+    @media (min-width: 769px) {
+        display: none !important;
+    }
+}

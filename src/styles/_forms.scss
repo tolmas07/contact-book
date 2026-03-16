@@ -1,0 +1,108 @@
+@use 'variables' as *;
+
+.form-group {
+    width: 100%;
+    margin-bottom: 4px;
+
+    &__error {
+        color: $primary-red;
+        font-size: 11px;
+        margin-top: 4px;
+        height: 14px;
+    }
+}
+
+.form-input {
+    width: 100%;
+    padding: 12px 16px; // Mobile default
+    background-color: $input-bg;
+    border: none;
+    border-radius: 10px;
+    font-size: 16px; // Mobile default (prevent zoom)
+    font-family: inherit;
+    color: $text-main;
+    outline: none;
+    transition: $transition-fast;
+
+    @media (min-width: 769px) {
+        font-size: 15px;
+        padding: 14px 16px;
+    }
+
+    &:focus {
+        background-color: #EAEAEA;
+    }
+
+    &::placeholder {
+        color: $text-secondary;
+    }
+
+    &.error {
+        border: 1px solid $primary-red;
+    }
+}
+
+.custom-select {
+    position: relative;
+    width: 100%;
+
+    &__header {
+        width: 100%;
+        padding: 14px 16px;
+        background-color: $input-bg;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        cursor: pointer;
+        transition: $transition-fast;
+        font-size: 15px;
+        color: $text-secondary;
+
+        &:hover {
+            background-color: #EAEAEA;
+        }
+    }
+
+    &__chevron {
+        transition: transform 0.3s ease;
+    }
+
+    &.open &__chevron {
+        transform: rotate(180deg);
+    }
+
+    &__options {
+        position: absolute;
+        top: calc(100% + 8px);
+        left: 0;
+        width: 100%;
+        background: #F2F2F2;
+        border-radius: 10px;
+        overflow: hidden;
+        display: none;
+        z-index: 10;
+        box-shadow: $shadow-md;
+    }
+
+    &.open &__options {
+        display: block;
+    }
+
+    &__option {
+        padding: 14px 16px;
+        font-size: 15px;
+        color: $text-main;
+        cursor: pointer;
+        transition: $transition-fast;
+
+        &:hover {
+            background-color: #E4E3E3;
+        }
+
+        &.selected {
+            background-color: #EEEEEE;
+            font-weight: 500;
+        }
+    }
+}

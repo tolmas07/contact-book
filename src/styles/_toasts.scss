@@ -1,0 +1,59 @@
+@use 'variables' as *;
+
+.toast-container {
+    position: fixed;
+    bottom: 32px;
+    right: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    z-index: 3000;
+}
+
+.toast {
+    background: white;
+    padding: 12px 20px;
+    border-radius: 8px;
+    box-shadow: $shadow-md;
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    animation: slideInRight 0.4s ease-out forwards;
+    transition: opacity 0.4s, transform 0.4s;
+
+    &__icon {
+        width: 20px;
+        height: 20px;
+        background: #00BA34;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        &--error {
+            background: $primary-red;
+        }
+
+        svg path {
+            stroke: white;
+        }
+    }
+
+    &__text {
+        font-size: 13px;
+        font-weight: 500;
+        color: $text-main;
+    }
+}
+
+@keyframes slideInRight {
+    from {
+        transform: translateX(100%);
+        opacity: 0;
+    }
+
+    to {
+        transform: translateX(0);
+        opacity: 1;
+    }
+}

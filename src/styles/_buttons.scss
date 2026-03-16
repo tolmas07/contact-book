@@ -1,0 +1,153 @@
+@use 'sass:color';
+@use 'variables' as *;
+
+.button {
+    display: inline-flex;
+    align-items: center;
+    padding: 8px 16px;
+    border-radius: 6px;
+    border: none;
+    font-size: 14px;
+    font-weight: 500;
+    cursor: pointer;
+    transition: $transition-fast;
+    font-family: inherit;
+
+    &--primary {
+        background-color: $primary-blue;
+        color: white;
+
+        &:hover {
+            filter: brightness(0.95);
+        }
+
+        &:active {
+            filter: brightness(0.9);
+            transform: scale(0.98);
+        }
+    }
+
+    &--danger {
+        background-color: $primary-red;
+        color: white;
+
+        &:hover {
+            filter: brightness(0.95);
+        }
+
+        &:active {
+            filter: brightness(0.9);
+            transform: scale(0.98);
+        }
+    }
+
+    &--secondary {
+        background-color: $primary-blue;
+        color: white;
+
+        &:hover {
+            filter: brightness(0.95);
+        }
+
+        &:active {
+            background-color: #0047C6;
+            transform: scale(0.98);
+        }
+    }
+
+    &--large {
+        width: 100%;
+        height: 54px;
+        font-size: 16px;
+        font-weight: 700;
+        justify-content: center;
+    }
+
+    &--desktop-only {
+        display: none !important;
+
+        @media (min-width: 769px) {
+            display: inline-flex !important;
+        }
+    }
+
+    &__plus {
+        margin-left: 8px;
+        font-size: 18px;
+    }
+}
+
+.button-text {
+    background: none;
+    border: none;
+    color: $primary-blue;
+    font-size: 15px;
+    font-weight: 600;
+    cursor: pointer;
+    padding: 8px;
+    transition: opacity 0.2s;
+
+    &:hover {
+        opacity: 0.8;
+    }
+
+    &--cancel {
+        color: $primary-blue;
+    }
+}
+
+.close-button {
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: transform 0.2s;
+
+    &:hover {
+        transform: rotate(90deg);
+    }
+}
+
+.action-btn {
+    width: 40px; // Mobile default
+    height: 40px;
+    border: 1px solid #EEEEEE;
+    border-radius: 6px;
+    background: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: $transition-fast;
+
+    svg path {
+        stroke: $text-secondary;
+        transition: stroke 0.2s;
+    }
+
+    &:hover {
+        background-color: $primary-blue;
+        border-color: $primary-blue;
+
+        svg path {
+            stroke: white;
+        }
+    }
+
+    &--delete:hover {
+        background-color: $primary-red;
+        border-color: $primary-red;
+
+        svg path {
+            stroke: white;
+        }
+    }
+
+    @media (min-width: 769px) {
+        width: 32px;
+        height: 32px;
+    }
+}

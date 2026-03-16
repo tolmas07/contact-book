@@ -1,0 +1,121 @@
+@use 'variables' as *;
+
+.header {
+    height: 64px; // Mobile height by default
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #F0F0F0;
+    position: sticky;
+    top: 0;
+    z-index: 800;
+    transition: $transition-default;
+
+    @media (min-width: 769px) {
+        height: 70px;
+        box-shadow: $shadow-sm;
+        border-bottom: none;
+    }
+
+    &__container {
+        width: 100%;
+        max-width: 1160px;
+        margin: 0 auto;
+        height: 100%;
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 0 16px; // Mobile padding
+
+        @media (min-width: 769px) {
+            padding: 0 40px;
+        }
+    }
+
+    &__actions {
+        display: flex;
+        align-items: center;
+        gap: 8px; // Mobile gap
+        height: 38px;
+
+        @media (min-width: 769px) {
+            gap: 16px;
+        }
+    }
+}
+
+.logo {
+    display: flex;
+    align-items: center;
+    height: 22px;
+    position: relative;
+    width: auto;
+
+    @media (min-width: 769px) {
+        width: 151px;
+    }
+
+    svg {
+        width: 18px;
+        height: 22px;
+        flex-shrink: 0;
+    }
+
+    &__text {
+        font-size: 18px;
+        font-weight: 700;
+        color: $primary-blue;
+        letter-spacing: -0.2px;
+        line-height: 22px;
+        white-space: nowrap;
+        margin-left: 16px;
+        width: 133px;
+    }
+}
+
+.button {
+    &#add-contact-desktop {
+        width: 38px; // Mobile: Only icon/circle
+        height: 38px;
+        padding: 0;
+        justify-content: center;
+        font-size: 13px;
+
+        span:not(.button__plus) {
+            display: none;
+        }
+
+        @media (min-width: 401px) {
+            width: auto;
+            padding: 0 16px;
+
+            span:not(.button__plus) {
+                display: inline;
+            }
+
+            .button__plus {
+                margin-left: 4px;
+            }
+        }
+
+        @media (min-width: 769px) {
+            width: 178px;
+            padding: 0;
+        }
+    }
+
+    &#view-groups {
+        width: auto;
+        height: 38px;
+        padding: 0 12px;
+        justify-content: center;
+        border-radius: 6px;
+        font-size: 13px;
+
+        @media (min-width: 769px) {
+            width: 82px;
+            padding: 0;
+        }
+    }
+}

@@ -1,0 +1,124 @@
+@use 'variables' as *;
+
+.drawer-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.4);
+    backdrop-filter: blur(2px);
+    opacity: 0;
+    visibility: hidden;
+    transition: $transition-default;
+    z-index: 900;
+
+    &.active {
+        opacity: 1;
+        visibility: visible;
+    }
+}
+
+.drawer {
+    position: fixed;
+    top: 0;
+    right: -312px; // Mobile: start hidden to the right
+    left: unset;
+    width: 312px;
+    height: 100%;
+    background: white;
+    z-index: 1000;
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    display: flex;
+    flex-direction: column;
+    box-shadow: 10px 0 30px rgba(0, 0, 0, 0.1);
+
+    &.active {
+        transform: translateX(-312px); // Slide in from right on mobile
+    }
+
+    @media (min-width: 769px) {
+        left: -312px;
+        right: unset;
+
+        &.active {
+            transform: translateX(312px); // Slide in from left on desktop
+        }
+    }
+
+    &__header {
+        padding: 16px 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        border-bottom: 1px solid #EEEEEE;
+    }
+
+    &__title {
+        font-family: 'Circe', sans-serif;
+        font-size: 18px;
+        font-weight: 700;
+        line-height: 120%;
+        color: $text-main;
+        padding: 0;
+        margin: 0;
+        white-space: nowrap;
+    }
+
+    &__body {
+        flex: 1;
+        padding: 22px 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 12px;
+        overflow-y: auto;
+    }
+
+    &__footer {
+        padding: 16px 20px;
+        display: flex;
+        justify-content: flex-end;
+
+        .button {
+            width: 104px;
+            height: 38px;
+            padding: 0;
+            justify-content: center;
+        }
+
+        &--groups {
+            justify-content: space-between;
+            gap: 16px;
+            align-items: center;
+
+            @media (min-width: 769px) {
+                justify-content: flex-end;
+                gap: 32px;
+            }
+        }
+    }
+}
+
+.group-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-bottom: 0;
+
+    .form-input {
+        width: 100%;
+        height: 38px;
+        flex: 1;
+
+        @media (min-width: 769px) {
+            width: 214px;
+            flex: none;
+        }
+    }
+
+    .action-btn {
+        width: 38px;
+        height: 38px;
+        padding: 0;
+    }
+}

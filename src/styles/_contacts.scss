@@ -1,0 +1,229 @@
+@use 'variables' as *;
+
+.main-content {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: #F8F9FB; // Mobile bg by default
+    padding: 24px 16px; // Mobile padding by default
+    min-height: calc(100vh - 72px);
+    justify-content: flex-start;
+
+    &:has(.empty-state) {
+        justify-content: flex-start;
+        padding: 24px 16px;
+
+        @media (min-width: 769px) {
+            justify-content: center;
+            padding: 0;
+        }
+    }
+
+    @media (min-width: 769px) {
+        background-color: #F8FAFC;
+        padding: 60px 0;
+        min-height: calc(100vh - 70px);
+        justify-content: center;
+    }
+}
+
+.contacts-wrapper {
+    width: 100%;
+    max-width: 1160px;
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 32px; // Mobile gap
+    padding: 0;
+
+    @media (min-width: 769px) {
+        gap: 24px;
+        padding: 0 40px;
+    }
+
+    @media (min-width: 1201px) {
+        padding: 0;
+    }
+}
+
+.contacts-list-container {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+
+    &:has(.empty-state) {
+        justify-content: center;
+        padding-bottom: 54px;
+    }
+}
+
+.empty-state {
+    text-align: center;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+
+    &__text {
+        width: 184px;
+        height: 23px;
+        opacity: 0.3;
+        font-family: 'Circe', sans-serif;
+        font-weight: 400;
+        font-size: 18px;
+        line-height: 130%;
+        letter-spacing: 0px;
+        color: $text-main;
+        text-align: center;
+        margin: 0;
+    }
+}
+
+.group-block {
+    background: white;
+    border-radius: 6px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.03);
+    overflow: hidden;
+    width: 100%;
+
+    &.collapsed {
+        .group-header h3 {
+            color: $text-main;
+        }
+
+        .group-chevron {
+            transform: rotate(-180deg);
+        }
+
+        .contacts-list {
+            display: none;
+        }
+    }
+}
+
+.group-header {
+    padding: 16px 20px; // Mobile padding
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    cursor: pointer;
+
+    h3 {
+        font-size: 16px;
+        font-weight: 800;
+        color: $primary-blue;
+    }
+
+    @media (min-width: 769px) {
+        padding: 24px 32px;
+    }
+}
+
+.contacts-list {
+    padding: 0 20px 12px; // Mobile padding
+
+    @media (min-width: 769px) {
+        padding: 0 32px 16px;
+    }
+}
+
+.contact-item {
+    display: flex;
+    flex-direction: column; // Mobile default
+    align-items: flex-start;
+    gap: 12px;
+    padding: 20px 0;
+    border-top: 1px solid #F1F1F1;
+
+    @media (min-width: 769px) {
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+        gap: 0;
+    }
+}
+
+.contact-name {
+    font-weight: 500;
+    font-size: 15px;
+    color: #4A4A4A;
+}
+
+.contact-phone-row {
+    display: flex;
+    align-items: center;
+    width: 100%; // Mobile default
+    justify-content: space-between;
+    gap: 24px;
+
+    @media (min-width: 769px) {
+        width: auto;
+        justify-content: flex-start;
+    }
+}
+
+.contact-phone {
+    font-family: 'Circe', sans-serif;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 120%;
+    color: #2D2D2D;
+    width: 184px;
+    height: 22px;
+    display: inline-block;
+}
+
+.contact-actions {
+    display: flex;
+    gap: 10px;
+}
+
+.action-btn {
+    width: 32px;
+    height: 32px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px solid #EDEDED;
+    border-radius: 4px;
+    background: transparent;
+    cursor: pointer;
+    transition: all 0.2s;
+    padding: 0;
+    color: #A0A0A0;
+
+    svg {
+        width: 24px;
+        height: 24px;
+        opacity: 0.8;
+        transition: all 0.2s;
+        display: block;
+    }
+
+    svg path {
+        fill: currentColor;
+        stroke: currentColor;
+    }
+
+    &:hover {
+        background-color: $primary-blue;
+        border-color: $primary-blue;
+        color: white;
+
+        svg {
+            opacity: 1;
+            transform: scale(1.1);
+        }
+
+        svg path {
+            stroke: white;
+        }
+    }
+
+    &--delete:hover {
+        background-color: $primary-red;
+        border-color: $primary-red;
+        color: white;
+    }
+}
